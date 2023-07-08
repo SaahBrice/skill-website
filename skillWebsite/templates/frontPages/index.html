@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form action="{% url 'skill_login' %}" method="post">
+        {% csrf_token %}
+        <label for="userName"> Username</label>
+        <input name="username" type="text" id="userName" placeholder="Username">
+
+        <label for="password"> Password</label>
+        <input name="password" type="password" id="password" placeholder="Password">
+        <button type="submit" > Login</button>
+    </form>
+
+
+
+
+</body>
+</html>

@@ -5,8 +5,8 @@ from .views import SecretarySignupView, LecturerSignupView, login_user, logout_u
 
 urlpatterns = [
 
-    path("signup/restau/", SecretarySignupView.as_view(), name="restau_signup"),
-    path("signup/superadmin/", LecturerSignupView.as_view(), name="superAdmin_signup"),
+    path("signup/secretary/", SecretarySignupView.as_view(), name="secretary_signup"),
+    path("signup/lecturer/", LecturerSignupView.as_view(), name="lecturer_signup"),
 
     path("logout/", logout_user, name="logout_user" ),
 

@@ -12,3 +12,6 @@ def formationCarte(request):
 
 def formationNormal(request):
     return render(request, 'frontPages/meetings.html')
+
+def userHome(request):
+    return render(request, 'frontPages/user-home.html')

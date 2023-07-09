@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 class UserChoices(models.IntegerChoices):
     SECRETARY = 1, 'Secretary'
-    LECTURER = 1, 'Lecturer'
+    LECTURER = 2, 'Lecturer'
 
 class User(AbstractUser):
     usertype = models.PositiveIntegerField(choices=UserChoices.choices, blank=True, default = UserChoices.SECRETARY)
@@ -25,7 +25,7 @@ class Secretary(models.Model):
 
 class Lecturer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='lecturer')
-   
+
     class Meta:
         verbose_name = "lecturer"
         verbose_name_plural = "lecturers"

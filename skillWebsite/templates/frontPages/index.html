@@ -59,26 +59,31 @@
               <div class="col-12">
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
-                      <a href="#" class="logo">
-                          INSTITUT SKILL
+                      <a href="#" class="logo d-flex align-items-center">
+                        <div class="col-auto pr-0">
+                          <img src="{% static 'assets/images/logoskill.png' %}" alt="INSTITUT SKILL" height="50px" width="50px">
+                        </div>
+                        <div class="col-auto px-4" style="font-weight: 500;">
+                          <span>INSTITUT SKILL</span>
+                        </div>
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                          <li><a href="meetings.html">Meetings</a></li>
-                          <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
+                          <li class="scroll-to-section"><a href="#apply">Postuler</a></li>
                           <li class="has-sub">
-                              <a href="javascript:void(0)">Pages</a>
+                              <a href="javascript:void(0)">Module</a>
                               <ul class="sub-menu">
-                                  <li><a href="meetings.html">Upcoming Meetings</a></li>
-                                  <li><a href="meeting-details.html">Meeting Details</a></li>
+                                  <li><a href="meetings.html">Tous</a></li>
+                                  <li><a href="meeting-details.html">A la carte</a></li>
                               </ul>
                           </li>
-                          <li class="scroll-to-section"><a href="#courses">Courses</a></li> 
-                          <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                          <li class="scroll-to-section"><a href="#courses">Formation</a></li> 
+                          <li class="scroll-to-section"><a href="#contact">Contact</a></li>
+                          <li><a href=" {% url 'login_user' %} ">login</a></li> 
                       </ul>        
-                      <a class='menu-trigger'>
+                      <a class="menu-trigger">
                           <span>Menu</span>
                       </a>
                       <!-- ***** Menu End ***** -->
@@ -101,10 +106,14 @@
               <div class="col-lg-12">
                 <div class="caption">
               <h6>Hello Students</h6>
-              <h2>Welcome to Education</h2>
-              <p>This is an edu meeting HTML CSS template provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, a group of young people by <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.</p>
-              <div class="main-button-red">
-                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+              <h2>INSTITUT DE FORMATION PROFESSIONELLE SKILL</h2>
+              <p>L'Institut Skill est un centre de formation professionnelle de premier plan au Cameroun, proposant des programmes de formation de 
+                <a rel="nofollow" href="" > haute qualité </a>
+                dans divers secteurs. Nous offrons des formations 
+                <a rel="nofollow" href="" > pratiques et adaptées </a>
+                aux besoins du marché du travail, afin de garantir que nos étudiants soient prêts à relever les défis de l'emploi.</p>
+              <div class="main-button-yellow py-3">
+                  <div class="scroll-to-section"><a href="#apply">Postuler Aujourd'hui!</a></div>
               </div>
           </div>
               </div>
@@ -125,8 +134,9 @@
                 <img src=" {% static 'assets/images/service-icon-01.png' %} " alt="">
               </div>
               <div class="down-content">
-                <h4>Best Education</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Formation de Qualité</h4>
+                <p>Notre formation est adaptée aux capacités de chaque apprenant.
+                   Nous souttenons chaque étudiant dès le début de sa formation jusqu'à ce qu'il obtienne un emploi.</p>
               </div>
             </div>
             
@@ -135,8 +145,10 @@
                 <img src=" {% static 'assets/images/service-icon-02.png' %} " alt="">
               </div>
               <div class="down-content">
-                <h4>Best Teachers</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Formateurs Qualifiés et Expérimentés</h4>
+                <p>Nos formateurs viennent de différentes régions du Cameroun.
+                   Vous serez formé(e) soit par des propriétaires d'entreprises,
+                    soit par des employés de grandes entreprises renommées.</p>
               </div>
             </div>
             
@@ -145,8 +157,10 @@
                 <img src=" {% static 'assets/images/service-icon-03.png' %} " alt="">
               </div>
               <div class="down-content">
-                <h4>Best Students</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Laboratoire équipé et aux normes requises.</h4>
+                <p>Nos laboratoires sont suffisamment équipés pour accueillir un grand nombre d'étudiants
+                   par session. Ils sont toujours ouverts et chaque étudiant peut expérimenter ou mener
+                    des recherches à tout moment.</p>
               </div>
             </div>
             
@@ -155,8 +169,10 @@
                 <img src=" {% static 'assets/images/service-icon-02.png' %} " alt="">
               </div>
               <div class="down-content">
-                <h4>Online Meeting</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Cours en Présentiel et en Ligne</h4>
+                <p>Nos cours sont diversifiés. Alors que la plupart des cours ont lieu dans nos
+                   installations modernes, certains sont dispensés en ligne et une connexion Internet
+                    est fournie à chaque étudiant.</p>
               </div>
             </div>
             
@@ -165,8 +181,9 @@
                 <img src=" {% static 'assets/images/service-icon-03.png' %} " alt="">
               </div>
               <div class="down-content">
-                <h4>Best Networking</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4>Possibilité de Bourse</h4>
+                <p>Les meilleurs étudiants ont la possibilité d'obtenir une bourse pour leur deuxième semestre.
+                   Cela inclut le remboursement de la deuxième tranche des frais de scolarité et une possibilité d'emploi direct à la fin de la formation.</p>
               </div>
             </div>
             
@@ -181,21 +198,21 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Upcoming Meetings</h2>
+            <h2>Journale Scolaire</h2>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="categories">
-            <h4>Meeting Catgories</h4>
+            <h4>Journaux par Categorie</h4>
             <ul>
-              <li><a href="#">Sed tempus enim leo</a></li>
-              <li><a href="#">Aenean molestie quis</a></li>
-              <li><a href="#">Cras et metus vestibulum</a></li>
-              <li><a href="#">Nam et condimentum</a></li>
-              <li><a href="#">Phasellus nec sapien</a></li>
+              <li><a href="#">Le Campus Scolaire</a></li>
+              <li><a href="#">Pris dans les Laboratoire</a></li>
+              <li><a href="#">La Apprenants</a></li>
+              <li><a href="#">Les Enseignant</a></li>
+              <li><a href="#">Communiquez du Directeur</a></li>
             </ul>
             <div class="main-button-red">
-              <a href="meetings.html">All Upcoming Meetings</a>
+              <a href="meetings.html">Tout Lire</a>
             </div>
           </div>
         </div>
@@ -205,16 +222,17 @@
               <div class="meeting-item">
                 <div class="thumb">
                   <div class="price">
-                    <span>$22.00</span>
+                    <span>article</span>
                   </div>
-                  <a href="meeting-details.html"><img src=" {% static 'assets/images/meeting-01.jpg' %} " alt="New Lecturer Meeting"></a>
+                  <a href="meeting-details.html"><img src=" {% static 'assets/images/meeting-00.jpg' %} " alt="New Lecturer Meeting"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Nov <span>10</span></h6>
                   </div>
-                  <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                  <a href="meeting-details.html"><h4>Un stagiare exceptionnel </h4></a>
+                  <p>M. Nathaneal, étudiant dans le département de maintenance informatique ... <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#myModal">
+                    lire plus </button></p>
                 </div>
               </div>
             </div>
@@ -697,7 +715,7 @@
         <div class="col-lg-9 align-self-center">
           <div class="row">
             <div class="col-lg-12">
-              <form id="contact" action="" method="post">
+              <form id="contact-form" action="" method="post">
                 <div class="row">
                   <div class="col-lg-12">
                     <h2>Let's get in touch</h2>
@@ -756,6 +774,7 @@
         </div>
       </div>
     </div>
+
     <div class="footer">
       <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
           <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
@@ -765,7 +784,7 @@
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
     <script src=" {% static 'vendor/jquery/jquery.min.js' %} "></script>
-    <script src=" {% static 'vendor/bootstrap/js/bootstrap.min.js' %} "></script>
+    <script src=" {% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
 
     <script src=" {% static 'assets/js/isotope.min.js' %} "></script>
     <script src=" {% static 'assets/js/owl-carousel.js' %} "></script>
@@ -822,5 +841,4 @@
     </script>
 </body>
 
-</body>
 </html>

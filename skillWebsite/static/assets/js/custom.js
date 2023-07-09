@@ -208,13 +208,16 @@
 	    $('.nav a').each(function () {
 	        var currLink = $(this);
 	        var refElement = $(currLink.attr("href"));
-	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-	            $('.nav ul li a').removeClass("active");
-	            currLink.addClass("active");
-	        }
-	        else{
-	            currLink.removeClass("active");
-	        }
+			//var pos = refElement.position().top
+			if (pos !== undefined && pos !== null) {
+				if (pos <= scrollPos && pos + refElement.height() > scrollPos) {
+					$('.nav ul li a').removeClass("active");
+					currLink.addClass("active");
+				}
+				else{
+					currLink.removeClass("active");
+				}
+			}
 	    });
 	}
 

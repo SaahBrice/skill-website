@@ -5,3 +5,10 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'frontPages/index.html')
+
+
+def formationCarte(request):
+    return render(request, 'frontPages/meetings.html')
+
+def formationNormal(request):
+    return render(request, 'frontPages/meetings.html')

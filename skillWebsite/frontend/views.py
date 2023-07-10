@@ -1,12 +1,34 @@
 from django.shortcuts import render, redirect
-from .forms import CaptchaTestForm, UploadFilesForm
+from .forms import CaptchaTestForm, UploadFilesForm, ModuleForm
 from django.contrib import messages
-from .models import DocumentPostuler
+from .models import DocumentPostuler, Module
 # Create your views here.
 
 
 def home(request):
     return render(request, 'frontPages/index.html')
+
+
+def delete_module(request, id):
+    module = Module.objects.get(pk = id).delete()
+    return redirect('module')
+
+def module(request):
+    modules = Module.objects.all()
+    if request.method == 'POST':
+        form = ModuleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('module')
+        else:
+            print('hello ')
+    else:
+        module_form = ModuleForm()
+    context = {
+        'modules': modules,
+        'module_form': module_form,
+    }
+    return render(request, 'frontPages/module.html', context)
 
 
 def formationCarte(request):

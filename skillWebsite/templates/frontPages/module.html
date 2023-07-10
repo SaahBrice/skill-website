@@ -106,6 +106,21 @@
       <div class="col-lg-12">
         <div class="row">
           <div class="col-lg-12">
+            <div class="meeting-single-item mb-4">
+              <div class="down-content">
+                <div class="">
+                  <h5>CREER UN MODULE</h5>
+                  <form action="" method="POST">
+                    {% csrf_token %}
+                    {{module_form}}
+                    <input type="submit" value="Creer" class="btn btn-success">
+                  </form>
+
+
+                </div>
+                
+              </div>
+            </div>
             <div class="meeting-single-item">
               <div class="down-content">
                 <div class="">
@@ -114,31 +129,19 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">nom</th>
-                        <th scope="col">Tel</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Pays</th>
-                        <th scope="col">Ville</th>
-                        <th scope="col">Acte</th>
-                        <th scope="col">CNI</th>
-                        <th scope="col">Diplome</th>
-                        <th scope="col">Fiche</th>
-                        <th scope="col">date</th>
+                        <th scope="col">type</th>
+                        <th scope="col">description</th>
+                        <th scope="col">action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {% for document in documents %}
+                      {% for module in modules %}
                       <tr>
-                        <th scope="row">{{document.id}}</th>
-                        <td>{{document.name}}</td>
-                        <td>{{document.number}}</td>
-                        <td>{{document.email}}</td>
-                        <td>{{document.pays}}</td>
-                        <td>{{document.ville}}</td>
-                        <td><a target="_blank" href="{{document.birthCertificate.url}}" download>telecharger</a></td>
-                        <td><a target="_blank" href="{{document.identityDocument.url}}" download>telecharger</a></td>
-                        <td><a target="_blank" href="{{document.recentCertificate.url}}" download>telecharger</a></td>
-                        <td><a target="_blank" href="{{document.signedEngagement.url}}" download>telecharger</a></td>
-                        <td>{{document.created_on}}</td>
+                        <th scope="row">{{module.id}}</th>
+                        <td>{{module.name}}</td>
+                        <td>{{module.description}}</td>
+                        <td><a href=" {% url 'delete-module' module.id %} ">supprimer</a></td>
+
                       </tr>
                       {% endfor %}
                     </tbody>

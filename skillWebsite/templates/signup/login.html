@@ -128,7 +128,7 @@
                       {% if messages %}
                         <ul class="messages">
                           {% for message in messages %}
-                            <li{% if message.tags %} style="font-size: 14px; color: red; padding: 10px;" lass="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            <li {% if message.tags %} style="font-size: 14px; color: red; padding: 10px;" lass="{{ message.tags }}"{% endif %}>{{ message }}</li>
                           {% endfor %}
                         </ul>
                       {% endif %}

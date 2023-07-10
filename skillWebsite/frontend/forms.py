@@ -1,13 +1,30 @@
 from django import forms
-from .models import DocumentPostuler
+from .models import DocumentPostuler, Module
 from captcha.fields import CaptchaField
+
+
+
+class ModuleForm(forms.ModelForm):
+    class Meta:
+        model = Module
+        fields = ['name', 'moduleType', 'description']
+        labels = {
+            'name': 'Nom du module',
+            'description': 'Description',
+            'moduleType': 'Type de module',
+        }
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.TextInput(attrs={'class': 'form-control mb-4'}),
+            'moduleType': forms.Select(attrs={'class': 'form-control'}),
+        }
 
 
 class UploadFilesForm(forms.ModelForm):
     max_file_size = 5*1024
     class Meta:
         model = DocumentPostuler
-        fields = ['name','number','email','pays','ville','birthCertificate','identityDocument','recentCertificate','signedEngagement',]
+        fields = ['name','number','email','pays','ville','birthCertificate','identityDocument','recentCertificate','signedEngagement','module']
         labels = {
             'name': 'Nom',
             'number': 'Numéro ex.(237688888888)',
@@ -29,6 +46,7 @@ class UploadFilesForm(forms.ModelForm):
             'identityDocument': forms.ClearableFileInput(attrs={'class': 'form-control '}),
             'recentCertificate': forms.ClearableFileInput(attrs={'class': 'form-control '}),
             'signedEngagement': forms.ClearableFileInput(attrs={'class': 'form-control mb-4'}),
+            'module': forms.Select(attrs={'class': 'form-control mb-4'}),
         }
 
     def __init__(self, *args, **kwargs):

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'frontend',
     'application',
     'userApp',
+
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,9 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+CAPTCHA_FONT_SIZE = 25
+CAPTCHA_IMAGE_SIZE = (150, 40)
+CAPTCHA_MATH_CHALLENGE_OPERATOR = 'x'
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_dots',)

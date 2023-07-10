@@ -109,10 +109,61 @@
 
 
 
+<section class="meetings-page" id="meetings">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="meeting-single-item">
+              <div class="down-content">
+                <div class="">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">nom</th>
+                        <th scope="col">Tel</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Pays</th>
+                        <th scope="col">Ville</th>
+                        <th scope="col">Acte</th>
+                        <th scope="col">CNI</th>
+                        <th scope="col">Diplome</th>
+                        <th scope="col">Fiche</th>
+                        <th scope="col">date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for document in documents %}
+                      <tr>
+                        <th scope="row">{{document.id}}</th>
+                        <td>{{document.name}}</td>
+                        <td>{{document.number}}</td>
+                        <td>{{document.email}}</td>
+                        <td>{{document.pays}}</td>
+                        <td>{{document.ville}}</td>
+                        <td><a target="_blank" href="{{document.birthCertificate.url}}" download>telecharger</a></td>
+                        <td><a target="_blank" href="{{document.identityDocument.url}}" download>telecharger</a></td>
+                        <td><a target="_blank" href="{{document.recentCertificate.url}}" download>telecharger</a></td>
+                        <td><a target="_blank" href="{{document.signedEngagement.url}}" download>telecharger</a></td>
+                        <td>{{document.created_on}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+                
+              </div>
+            </div>
+          </div>
 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<h1>HELLO WORLD</h1>
 
 
 
